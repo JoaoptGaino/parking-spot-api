@@ -1,0 +1,11 @@
+version: '3'
+services:
+  parking-control-db:
+    container_name: parking-control-db
+    image: postgres:13.4-alpine
+    environment:
+      - 'POSTGRES_DB=parking_control'
+      - 'POSTGRES_USER=root'
+      - 'POSTGRES_PASSWORD=root'
+    ports:
+      - '5432:5432'
