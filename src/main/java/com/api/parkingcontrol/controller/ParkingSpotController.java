@@ -3,21 +3,18 @@ package com.api.parkingcontrol.controller;
 
 import com.api.parkingcontrol.dtos.ParkingSpotDto;
 import com.api.parkingcontrol.models.ParkingSpot;
-import com.api.parkingcontrol.services.ParkingSpotService;
-import org.apache.coyote.Response;
+import com.api.parkingcontrol.services.implementations.ParkingSpotServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.util.List;
 import java.util.UUID;
 
 import static org.springframework.http.HttpStatus.CREATED;
@@ -28,9 +25,9 @@ import static org.springframework.http.HttpStatus.OK;
 @RequestMapping("parking-spot")
 public class ParkingSpotController {
 
-    final ParkingSpotService parkingSpotService;
+    final ParkingSpotServiceImpl parkingSpotService;
 
-    public ParkingSpotController(ParkingSpotService parkingSpotService) {
+    public ParkingSpotController(ParkingSpotServiceImpl parkingSpotService) {
         this.parkingSpotService = parkingSpotService;
     }
 
